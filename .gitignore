@@ -1,0 +1,28 @@
+# VirtualBox
+*.vdi
+*.vmdk
+*.ova
+*.ovf
+*.vhd
+
+# ISO
+*.iso
+
+# Logs
+*.log
+
+# Archives
+*.zip
+*.7z
+*.rar
+
+# Python
+__pycache__/
+*.pyc
+
+# Environment
+.env
+
+# Windows
+Thumbs.db
+Desktop.ini
