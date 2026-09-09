@@ -72,30 +72,30 @@ The generated events are monitored through Wazuh.
 ## Network Topology
 
 ```text
-                         Internet
-                            |
-                         NAT / WAN
-                            |
-                       +-----------+
-                       |  pfSense  |
-                       | Firewall  |
-                       |  Router   |
-                       +-----------+
-                            |
-                     Internal Network
-                         (intnet)
-                            |
-          +-----------------+-----------------+
-          |                 |                 |
-          |                 |                 |
-   +-------------+   +-------------+   +-------------+
-   | Wazuh       |   | Windows 10  |   | Kali Linux  |
-   | Server      |   | Endpoint    |   | Attack/Test |
-   |             |   |             |   |             |
-   | Manager     |   | Wazuh Agent |   | Nmap /     |
-   | Indexer     |   | Sysmon      |   | Simulations|
-   | Dashboard   |   |             |   |             |
-   +-------------+   +-------------+   +-------------+
+                    Internet
+                       │
+                    NAT / WAN
+                       │
+                 ┌───────────┐
+                 │  pfSense  │
+                 │ Firewall  │
+                 │  Router   │
+                 └─────┬─────┘
+                       │
+              Internal Network
+                   (intnet)
+                       │
+       ┌───────────────┼───────────────┐
+       │               │               │
+       ▼               ▼               ▼
+┌─────────────┐ ┌─────────────┐ ┌─────────────┐
+│ Wazuh       │ │ Windows 10  │ │ Kali Linux  │
+│ Server      │ │ Endpoint    │ │             │
+│             │ │             │ │ Attack /    │
+│ Manager     │ │ Wazuh Agent │ │ Security    │
+│ Indexer     │ │ Sysmon      │ │ Testing     │
+│ Dashboard   │ │             │ │             │
+└─────────────┘ └─────────────┘ └─────────────┘
 ```
 
 ## Network Configuration
